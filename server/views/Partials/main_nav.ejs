@@ -1,0 +1,43 @@
+
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid">
+        <!-- Brand name with a link to the home page -->
+        <a class="navbar-brand" href="/">Workout Tracker</a>
+        
+        <!-- Toggle button for collapsing the navbar in smaller viewports -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Navbar content, collapsible in smaller viewports -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto"> <!-- Align items to the right using `ms-auto` -->
+                <!-- Navigation item for Workouts -->
+                <li class="nav-item">
+                
+                    <% if(title == "Workouts") { %> <!-- Highlight if the current page is "Workouts" -->
+                        <a class="nav-link active" href="/workoutslist">
+                    <% } else { %>
+                        <a class="nav-link" href="/workoutslist">
+                    <% } %>
+                        <!-- Icon for the Workouts menu -->
+                        <i class="fa-solid fa-dumbbell"></i> Workouts
+
+                    </a>
+                </li>
+                <% if (isLoggedIn) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                <% } else { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                <% } %>
+                
+            </ul>
+        </div>
+    </div>
+</nav>

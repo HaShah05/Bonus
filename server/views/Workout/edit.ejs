@@ -1,0 +1,56 @@
+<!-- Include the shared header template -->
+<%- include ../Partials/header.ejs %>
+
+<!-- Include the shared main navigation bar -->
+<%- include ../Partials/main_nav.ejs %>
+
+<!-- Content for the Edit Operation -->
+<div class="container">
+    <div class="row">
+        <!-- Center the form on the page -->
+        <div class="offset-md-3 col-md-6">
+            <!-- Page title dynamically set using template variable -->
+            <h1><%= title %></h1>
+            
+            <!-- Form for editing a workout -->
+            <form class="form" method="POST">
+                <!-- Input for Calories with prefilled value from the Workout object -->
+                <div class="form-group">
+                    <label for="caloriesTextField">Calories</label>
+                    <input type="text" class="form-control" id="caloriesTextField" placeholder="Enter the Calories" name="Calories" value="<%= Workout.Calories %>" required>
+                </div>
+                
+                <!-- Input for Exercise with prefilled value -->
+                <div class="form-group">
+                    <label for="exerciseTextField">Exercise</label>
+                    <input type="text" class="form-control" id="exerciseTextField" placeholder="Enter the exercise" name="Exercise" value="<%= Workout.Exercise %>" required>
+                </div>
+                
+                <!-- Input for Sets with prefilled value -->
+                <div class="form-group">
+                    <label for="setsTextField">Sets</label>
+                    <input type="text" class="form-control" id="setsTextField" placeholder="Enter the # of sets" name="Sets" value="<%= Workout.Sets %>" required>
+                </div>
+                
+                <!-- Input for Reps with prefilled value -->
+                <div class="form-group">
+                    <label for="repsTextArea">Reps</label>
+                    <input type="text" class="form-control" id="repsTextArea" placeholder="Enter the # of reps" name="Reps" value="<%= Workout.Reps %>" required>
+                </div>
+                
+                <!-- Submit button styled as primary with an edit icon -->
+                <button class="btn btn-primary" type="submit">
+                    Submit <i class="fas fa-edit"></i>
+                </button>
+                
+                <!-- Cancel button styled as warning with an undo icon -->
+                <button class="btn btn-warning" type="submit">
+                    Cancel <i class="fas fa-undo"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Include the shared footer template -->
+<%- include ../Partials/footer.ejs %>

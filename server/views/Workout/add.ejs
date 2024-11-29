@@ -1,0 +1,56 @@
+<!-- Include the shared header template -->
+<%- include ../Partials/header.ejs %>
+
+<!-- Include the shared main navigation bar template -->
+<%- include ../Partials/main_nav.ejs %>
+
+<!-- Content for Add Page -->
+<div class="container">
+    <div class="row">
+        <!-- Centering the form on the page -->
+        <div class="offset-md-3 col-md-6">
+            <!-- Page title dynamically set with templating -->
+            <h1><%= title %></h1>
+            
+            <!-- Form for adding a workout -->
+            <form class="form" method="POST">
+                <!-- Input for Calories -->
+                <div class="form-group">
+                    <label for="CaloriesTextField">Calories</label>
+                    <input type="text" class="form-control" id="CaloriesTextField" placeholder="Enter the Calories" name="Calories" required>
+                </div>
+                
+                <!-- Input for Exercise -->
+                <div class="form-group">
+                    <label for="exerciseTextField">Exercise</label>
+                    <input type="text" class="form-control" id="exerciseTextField" placeholder="Enter the Exercise" name="Exercise" required>
+                </div>
+                
+                <!-- Input for Sets -->
+                <div class="form-group">
+                    <label for="setsTextField">Sets</label>
+                    <input type="text" class="form-control" id="setsTextField" placeholder="Enter the # of sets" name="Sets" required>
+                </div>
+                
+                <!-- Input for Reps -->
+                <div class="form-group">
+                    <label for="repsTextArea">Reps</label>
+                    <input type="text" class="form-control" id="repsTextArea" placeholder="Enter the # of reps" name="Reps" required>
+                </div>
+                
+                <!-- Submit button with an edit icon -->
+                <button class="btn btn-light" type="submit">
+                    Submit <i class="fas fa-edit"></i>
+                </button>
+                
+                <!-- Cancel button with an undo icon -->
+                <button class="btn btn-dark" type="submit">
+                    Cancel <i class="fas fa-undo"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Include the shared footer template -->
+<%- include ../Partials/footer.ejs %>
